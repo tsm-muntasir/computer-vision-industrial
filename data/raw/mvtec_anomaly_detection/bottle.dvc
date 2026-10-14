@@ -1,0 +1,6 @@
+outs:
+- md5: 55bf7b81c5d0436186845464c825673b.dir
+  size: 156570806
+  nfiles: 357
+  hash: md5
+  path: bottle

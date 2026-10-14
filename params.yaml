@@ -1,0 +1,25 @@
+
+project:
+  name: industrial-anomaly-detection
+  category: bottle
+  seed: 42
+
+data:
+  root: data/raw/mvtec_anomaly_detection
+  image_size: 256
+  validation_fraction: 0.2
+
+autoencoder:
+  epochs: 10
+  batch_size: 8
+  learning_rate: 0.001
+  weight_decay: 0.00001
+
+patchcore:
+  backbone: resnet18
+  batch_size: 4
+  patches_per_image: 64
+  max_memory_bank_size: 5000
+
+evaluation:
+  normal_validation_quantile: 0.995

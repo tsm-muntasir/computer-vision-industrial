@@ -1,0 +1,44 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# Generated reports and model artifacts
+reports/*
+!reports/.gitkeep
+artifacts/
+checkpoints/
+*.pt
+*.pth
+*.onnx
+
+# DVC local cache
+.dvc/cache/
+
+/data/raw/*
+!/data/raw/mvtec_anomaly_detection/
+/data/raw/mvtec_anomaly_detection/*
+!/data/raw/mvtec_anomaly_detection//*.dvc
+!/data/raw/mvtec_anomaly_detection//*.gitkeep
+!/data/raw/mvtec_anomaly_detection/bottle.dvc
+!/data/raw/.gitkeep
+
+
+# Logs
+mlruns/
+*.log
+  

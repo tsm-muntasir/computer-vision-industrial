@@ -1,0 +1,54 @@
+
+stages:
+  train_autoencoder:
+    cmd: python -m src.train
+    deps:
+      - src/data.py
+      - src/model.py
+      - src/train.py
+      - data/raw/mvtec_anomaly_detection/bottle
+    outs:
+      - artifacts/autoencoder_best.pth
+      - reports/training_loss.png
+      - reports/test_predictions.png
+    metrics:
+      - reports/test_metrics.json:
+          cache: false
+
+  evaluate_autoencoder_localization:
+    cmd: python -m scripts.evaluate_localization
+    deps:
+      - src/data.py
+      - src/model.py
+      - scripts/evaluate_localization.py
+      - artifacts/autoencoder_best.pth
+      - data/raw/mvtec_anomaly_detection/bottle
+    metrics:
+      - reports/localization_metrics.json:
+          cache: false
+    outs:
+      - reports/localization_results.png
+
+  build_patchcore_memory:
+    cmd: python -m scripts.train_patchcore
+    deps:
+      - src/data.py
+      - src/patchcore.py
+      - scripts/train_patchcore.py
+      - data/raw/mvtec_anomaly_detection/bottle
+    outs:
+      - artifacts/patchcore_memory_bank.pth
+
+  evaluate_patchcore:
+    cmd: python -m scripts.evaluate_patchcore
+    deps:
+      - src/data.py
+      - src/patchcore.py
+      - scripts/evaluate_patchcore.py
+      - artifacts/patchcore_memory_bank.pth
+      - data/raw/mvtec_anomaly_detection/bottle
+    metrics:
+      - reports/patchcore_metrics.json:
+          cache: false
+    outs:
+      - reports/patchcore_localization.png
