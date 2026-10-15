@@ -1,0 +1,28 @@
+{
+    "category": "bottle",
+    "checkpoint": "D:\\computer-vision-industrial\\artifacts\\autoencoder_best.pth",
+    "image_size": 256,
+    "threshold_method": "99.5th percentile of normal validation scores/errors; not optimized using test labels or masks",
+    "image_level": {
+        "image_count": 83,
+        "anomaly_count": 63,
+        "normal_count": 20,
+        "image_score_threshold": 0.07126239262521268,
+        "image_precision": 1.0,
+        "image_recall": 0.49206349206349204,
+        "image_f1": 0.6595744680851063,
+        "image_roc_auc": 0.711111111111111,
+        "image_average_precision": 0.9099470317217395
+    },
+    "pixel_level": {
+        "pixel_count": 5439488,
+        "positive_pixel_fraction": 0.05779661615210843,
+        "pixel_error_threshold": 0.027220651507377625,
+        "pixel_precision": 0.3900200745626613,
+        "pixel_recall": 0.060562878517990734,
+        "pixel_f1": 0.10484523763635663,
+        "pixel_iou": 0.055322784037749664,
+        "pixel_roc_auc": 0.7038527661458627,
+        "pixel_average_precision": 0.14036865936932605
+    }
+}
