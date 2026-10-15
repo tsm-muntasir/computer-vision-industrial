@@ -18,7 +18,7 @@ venv/
 .idea/
 
 # Generated reports and model artifacts
-reports/*
+#reports/*
 !reports/.gitkeep
 artifacts/
 checkpoints/
