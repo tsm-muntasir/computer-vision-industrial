@@ -1,0 +1,1 @@
+"""FastAPI inference service for industrial anomaly detection."""

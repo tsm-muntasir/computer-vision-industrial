@@ -1,0 +1,13 @@
+
+services:
+  anomaly-api:
+    build:
+      context: .
+    image: industrial-anomaly-api:1.0
+    container_name: industrial-anomaly-api
+    ports:
+      - "8000:8000"
+    environment:
+      MODEL_TYPE: ${MODEL_TYPE:-autoencoder}
+      IMAGE_SIZE: "256"
+    restart: unless-stopped
